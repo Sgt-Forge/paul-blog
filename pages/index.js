@@ -26,20 +26,13 @@ export default function Home({ allPostsData }) {
         </h1>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>This is a card &rarr;</h2>
-            <p>It tempts you to press it</p>
+          <a href="/posts/all" className={styles.card}>
+            <h2>Here are my blog posts</h2>
+          </a>
+          <a href="/photos/all" className={styles.card}>
+            <h2>Here are my photos</h2>
           </a>
         </div>
-        <ul>
-          {allPostsData.map(({id, date, title}) => (
-            <li>
-              <p>{id}</p>
-              <p>{date}</p>
-              <p>{title}</p>
-            </li>
-          ))}
-        </ul>
       </main>
 
       <footer className={styles.footer}>

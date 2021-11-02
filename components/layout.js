@@ -23,8 +23,8 @@ export default function Layout({ children, home }) {
                 <>
                     <Image
                         priority
-                        src="/images/profile.jpg"
-                        className={utilStyles.borderedCircle}
+                        src="/../public/images/paul_nakonieczny.JPG"
+                        className={utilStyles.borderCircle}
                         height={144}
                         width={144}
                         alt={name}
@@ -36,8 +36,8 @@ export default function Layout({ children, home }) {
                         <a>
                             <Image
                                 priority
-                                src="/images/profile.jpg"
-                                className={utilStyles.borderedCircle}
+                                src="/../public/images/paul_nakonieczny.JPG"
+                                className={utilStyles.borderCircle}
                                 height={144}
                                 width={144}
                                 alt={name}
