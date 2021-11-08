@@ -1,17 +1,9 @@
 import Head from 'next/head'
+import Link from 'next/link'
+
 import styles from '../styles/Home.module.css'
-import { getSortedPostsData } from '../lib/posts'
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData
-    }
-  }
-}
-
-export default function Home({ allPostsData }) {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,16 +14,20 @@ export default function Home({ allPostsData }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Paul's Blog
+          Welcome to Paul&apos;s Blog
         </h1>
 
         <div className={styles.grid}>
-          <a href="/posts/all" className={styles.card}>
-            <h2>Here are my blog posts</h2>
-          </a>
-          <a href="/photos/all" className={styles.card}>
-            <h2>Here are my photos</h2>
-          </a>
+          <Link href={`/allPosts`}>
+            <a className={styles.card}>
+              <h2>All Blog Posts</h2>
+            </a>
+          </Link>
+          <Link href={`/allPhotos`}>
+            <a className={styles.card}>
+              <h2>All Photos</h2>
+            </a>
+          </Link>
         </div>
       </main>
 
