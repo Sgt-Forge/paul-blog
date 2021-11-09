@@ -25,12 +25,11 @@ export default function All({ allPhotoData }) {
     return ( 
         <Layout>
             <ul className={utilStyles.list}>
-                {allPhotoData.map( ({id, fullPath, order}) => (
+                {allPhotoData.map( ({id, title}) => (
                     <li key={id} className={utilStyles.listItem}>
                         <Link href={`/photos/${id}`}>
-                            <a>{id}</a>
+                            <a><h3>{title}</h3></a>
                         </Link>
-                        <p>{fullPath}, {order}</p>
                     </li>
                 ))}
             </ul>

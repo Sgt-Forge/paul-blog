@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import path from 'path'
 
-import utilStyles from '../../styles/util.module.css'
 import Layout from '../../components/layout'
 import { getAllPhotoIds, getPhotoData } from '../../lib/photos'
 
@@ -16,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const photoData = getPhotoData(params.id)
+    const photoData = await getPhotoData(params.id)
     return {
         props: {
             photoData
@@ -30,11 +29,13 @@ export default function Photo({ photoData }) {
             <Image
                 priority
                 src={photoData.fullPath}
-                className={utilStyles.borderCircle}
-                height={144}
-                width={144}
-                alt={photoData.fullPath}
+                height={648}
+                width={864}
+                alt={photoData.title}
             />
+            <h1>{photoData.title}</h1>
+            <h3>{photoData.date}</h3>
+            <div dangerouslySetInnerHTML={{ __html: photoData.contentHtml }} />
         </Layout>
     )
 }
